@@ -1,0 +1,32 @@
+menu:
+  -
+    name: Home
+    url: /
+  -
+    name: Portfolio
+    url: /portfolio.html
+  -
+    name: Apps
+    url: /apps.html
+    menu:
+      -
+        name: Chrome App Shortcut Generator
+        url: http://casg.smeagol.pl/
+
+social:
+  -
+    name: linkedin
+    url: http://uk.linkedin.com/pub/pawe%C5%82-bogut/91/48a/b76
+    sign: j
+  -
+    name: github
+    url: https://github.com/pbogut
+    sign: Q
+  -
+    name: twitter
+    url: http://www.twitter.com/_pbogut
+    sign: a
+  -
+    name: googleplus
+    url: http://google.com/+PawełBogut
+    sign: c

@@ -1,0 +1,71 @@
+!!!
+%html
+  %head
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+    %meta{name: "description", content: "{{site.description}}"}
+    %meta{name: "author", content: "{{site.author}}"}
+    %title= '{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}'
+    %link{href: "/css/style.css", media: "all", rel: "stylesheet", type: "text/css"}/
+    %link{rel: "canonical", href: "{{ site.url }}{{ page.url | replace:'index.html',''}}"}
+    %script{src: "/js/jquery.min.js"}
+    %script{src: "/js/unslider.min.js"}
+    %script{src: "/js/script.js"}
+  %body
+    %a.true-header-href{href: "/", title: "Home"}
+      .true-header
+    #site-navigation-wrap
+      #site-navigation-sub-wrap
+        %nav#site-navigation.navigation.main-navigation.clr{role: "navigation"}
+          #main-menu.menu-main-container
+            %a{href: "/", title: "Home"}
+              %img.header-avatar{alt: "Home", src: "/images/avatar.png"}/
+            %a#navigation-toggle{href: "#sidr-main"}
+              %span.fa.fa-bars>
+              Menu
+            %aside.social-icons-sidebar
+              {% for social in site.data.config.social %}
+              %a.socicon{href: "{{ social.url }}", target: "_blank"}
+                {{ social.sign }}
+              {% endfor %}
+              -# %a.socicon.rss{href: "/rss.xml", target: "_blank"} ,
+            -#todo move to template or helper
+            %ul.menu
+              {% for menu in site.data.config.menu %}
+              %li
+                %a{href: "{{ menu.url }}",
+                class: "{% if page.url == menu.url %}active{% endif %}",
+                target: "{% if menu.url contains 'http' %}_blank{% endif %}"}
+                  {{ menu.name }}
+                {% if menu.menu %}
+                %ul.menu
+                  {% for menu in menu.menu %}
+                  %li
+                    %a{href: "{{ menu.url }}",
+                    class: "{% if page.url == menu.url %}active{% endif %}",
+                    target: "{% if menu.url contains 'http' %}_blank{% endif %}"}
+                      {{ menu.name }}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+    #wrap.clr.container
+      %main
+        %article
+          %header
+            %h1 {{ page.title }}
+          {{ page.content }}
+    #footer-wrap.site-footer.clr
+      #footer.clr
+        .span_1_of_1.col.col-1
+          .region.region-footer
+            #block-system-powered-by.block.block-system
+              .content
+                %span
+                  Powered by
+                  %a{href: "http://jekyllrb.com/"} Jekyll
+    %footer#copyright-wrap.clear
+      #copyright
+        = "Copyright &copy; #{Time.now.year}"
+        = succeed "." do
+          %a{href: "/"} {{ site.name }}
+    #sidr-close
+      %a{href: "#sidr-close", class:"toggle-sidr-close"}
