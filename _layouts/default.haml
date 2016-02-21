@@ -6,7 +6,7 @@
     %meta{name: "author", content: "{{site.author}}"}
     %title= '{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}'
     %link{href: "/css/style.css", media: "all", rel: "stylesheet", type: "text/css"}/
-    %link{rel: "canonical", href: "{{ site.url }}{{ page.url | replace:'index.html',''}}"}
+    %link{rel: "canonical", href: "{{ site.data.config.url }}{{ page.url | replace:'index.html',''}}"}
     %script{src: "/js/jquery.min.js"}
     %script{src: "/js/unslider.min.js"}
     %script{src: "/js/script.js"}
