@@ -18,16 +18,20 @@ social:
   -
     name: linkedin
     url: http://uk.linkedin.com/pub/pawe%C5%82-bogut/91/48a/b76
-    sign: j
+    sign: "&#57417;"
   -
     name: github
     url: https://github.com/pbogut
-    sign: Q
+    sign: "&#57392;"
+  -
+    name: stackoverflow
+    url: http://stackoverflow.com/users/752006/pbogut
+    sign: "&#57351;"
   -
     name: twitter
     url: http://www.twitter.com/_pbogut
-    sign: a
+    sign: "&#57408;"
   -
     name: googleplus
     url: http://google.com/+PawełBogut
-    sign: c
+    sign: "&#57410;"
