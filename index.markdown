@@ -5,8 +5,8 @@ title: Home
 My name is Paweł Bogut and I'm software developer strongly focused on Web Development.
 Have solid experience in PHP development including Magento e-commerce platform.
 
-Beside PHP I love to work with Ruby on Rails framework, which I found a great alternative
-for my previous favorite frameworks Zend and Symphony2.
+Although I'm mainly working with *PHP* and *JS* I also love to learn new technologies
+and languages. Besides *PHP*, I enjoy scripting in *Python*, learning *Elixir*,
+hacking with *Ruby* and coding in *Go*.
 
-In 2014 I'd moved from Poland to United Kingdom.
-Currently living and working in Manchester.
+Since 2014 I'm living and working in Manchester, UK.
