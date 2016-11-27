@@ -54,17 +54,11 @@
           %header
             %h1 {{ page.title }}
           {{ page.content }}
-    #footer-wrap.site-footer.clr
-      #footer.clr
-        .span_1_of_1.col.col-1
-          .region.region-footer
-            #block-system-powered-by.block.block-system
-              .content
-                %span
-                  Powered by
-                  %a{href: "http://jekyllrb.com/"} Jekyll
     %footer#copyright-wrap.clear
       #copyright
+        Powered by
+        %a{href: "http://jekyllrb.com/"} Jekyll
+        |
         = "Copyright &copy; #{Time.now.year}"
         = succeed "." do
           %a{href: "/"} {{ site.name }}

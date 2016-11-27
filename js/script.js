@@ -258,7 +258,7 @@ jQuery( function($) {
 (function($){
   var fixFooter = function() {
     var height = $('.true-header').height() +
-      $('#site-navigation-wrap').height() + 233;
+      $('#site-navigation-wrap').height() + 106;
     $('main').css({'min-height': window.innerHeight - height});
   };
   var jWindow = $(window);
