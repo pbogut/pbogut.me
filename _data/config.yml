@@ -25,13 +25,5 @@ social:
     sign: "&#57392;"
   -
     name: stackoverflow
-    url: http://stackoverflow.com/users/752006/pbogut
+    url: http://stackoverflow.com/users/story/752006
     sign: "&#57351;"
-  -
-    name: twitter
-    url: http://www.twitter.com/_pbogut
-    sign: "&#57408;"
-  -
-    name: googleplus
-    url: http://google.com/+PawełBogut
-    sign: "&#57410;"
