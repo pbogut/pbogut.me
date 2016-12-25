@@ -6,13 +6,6 @@ menu:
   -
     name: Portfolio
     url: /portfolio.html
-  -
-    name: Apps
-    url: /apps.html
-    menu:
-      -
-        name: Chrome App Shortcut Generator
-        url: http://casg.smeagol.pl/
 
 social:
   -
