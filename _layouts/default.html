@@ -1,0 +1,86 @@
+<!doctype>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <meta content="{{site.description}}" name="description"/>
+    <meta content="{{site.author}}" name="author"/>
+    <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
+    <link href="/css/style.css" media="all" rel="stylesheet" type="text/css"></link>
+    <link href="{{ site.data.config.url}}" rel="canonical"></link>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/unslider.min.js"></script>
+    <script src="/js/script.js"></script>
+  </head>
+  <body>
+    {% include analytics.haml %}
+    <a class="true-header-href" href="/" title="Home">
+      <div class="true-header"></div>
+    </a>
+    <div id="site-navigation-wrap">
+      <div id="site-navigation-sub-wrap">
+        <nav class="navigation main-navigation clr" id="site-navigation" role="navigation">
+          <div class="menu-main-container" id="main-menu">
+            <a href="/" title="Home">
+              <img alt="Home" class="header-avatar" src="/images/avatar.png"/>
+            </a>
+            <a href="#sidr-main" id="navigation-toggle">
+              <span class="fa fa-bars"></span>
+              Menu
+            </a>
+            <aside class="social-icons-sidebar">
+              {% for social in site.data.config.social %}
+                  <a class="socicon" href="{{ social.url }}" target="_blank">
+                {{ social.sign }}
+              </a>
+              {% endfor %}
+            </aside>
+            <ul class="menu">
+              {% for menu in site.data.config.menu %}
+              <li>
+                  <a class="{% if page.url == menu.url %}active{% endif %}" href="{{ menu.url }}" target="{% if menu.url contains 'http' %}_blank{% endif %}">
+                  {{ menu.name }}
+                </a>
+                {% if menu.menu %}
+                <ul class="menu">
+                  {% for menu in menu.menu %}
+                  <li>
+                    <a class="{% if page.url == menu.url %}active{% endif %}" href="{{ menu.url }}" target="{% if menu.url contains 'http' %}_blank{% endif %}">
+                      {{ menu.name }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="clr container" id="wrap">
+      <main>
+        <article>
+          <header>
+            <h1>{{ page.title }}</h1>
+          </header>
+          {{ content }}
+        </article>
+      </main>
+    </div>
+    <footer class="clear" id="copyright-wrap">
+      <div id="copyright">
+        Powered by
+        <a href="http://jekyllrb.com/">Jekyll</a>
+        |
+        Copyright &copy; {{Time.now.year}}
+        {{ site.time | date: '%Y' }}
+          <a href="/">{{ site.name }}</a>
+      </div>
+    </footer>
+    <div id="sidr-close">
+      <a class="toggle-sidr-close" href="#sidr-close"></a>
+    </div>
+  </body>
+</html>
