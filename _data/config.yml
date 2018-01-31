@@ -1,10 +1,10 @@
 url: http://pbogut.me
 menu:
   -
-    name: Home
+    title: Home
     url: /
   -
-    name: Portfolio
+    title: Portfolio
     url: /portfolio.html
 
 social:

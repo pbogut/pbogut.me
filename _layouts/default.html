@@ -7,10 +7,12 @@
     <meta content="{{site.author}}" name="author"/>
     <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
     <link href="/css/style.css" media="all" rel="stylesheet" type="text/css"></link>
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css"></link>
     <link href="{{ site.data.config.url}}" rel="canonical"></link>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/unslider.min.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/highlight.pack.js"></script>
   </head>
   <body>
     {% include analytics.haml %}
@@ -39,14 +41,19 @@
               {% for menu in site.data.config.menu %}
               <li>
                   <a class="{% if page.url == menu.url %}active{% endif %}" href="{{ menu.url }}" target="{% if menu.url contains 'http' %}_blank{% endif %}">
-                  {{ menu.name }}
+                  {{ menu.title }}
                 </a>
                 {% if menu.menu %}
+                    {% if menu.menu == "posts" %}
+                        {% assign submenu = site.posts %}
+                    {% else %}
+                        {% assign submenu = menu.menu %}
+                    {% endif %}
                 <ul class="menu">
-                  {% for menu in menu.menu %}
+                  {% for menu in submenu %}
                   <li>
                     <a class="{% if page.url == menu.url %}active{% endif %}" href="{{ menu.url }}" target="{% if menu.url contains 'http' %}_blank{% endif %}">
-                      {{ menu.name }}
+                      {{ menu.title }}
                     </a>
                   </li>
                   {% endfor %}
@@ -63,10 +70,32 @@
       <main>
         <article>
           <header>
+            {% if page.date %}
+            <span class="page-date">{{ page.date | date: "%B %e, %Y" }}</span>
+            {% endif %}
             <h1>{{ page.title }}</h1>
           </header>
           {{ content }}
         </article>
+        {% if page.comments %}
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_config = function () {
+            this.page.url = "{{ page.url }}";
+            this.page.identifier = "{{ page.url }}";
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://pbogut.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        {% endif %}
       </main>
     </div>
     <footer class="clear" id="copyright-wrap">
@@ -83,4 +112,6 @@
       <a class="toggle-sidr-close" href="#sidr-close"></a>
     </div>
   </body>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script id="dsq-count-scr" src="//pbogut.disqus.com/count.js" async></script>
 </html>
