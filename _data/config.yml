@@ -6,10 +6,6 @@ menu:
   -
     title: Portfolio
     url: /portfolio.html
-  -
-    title: Sketch
-    url: /sketch.html
-    menu: "posts"
 
 social:
   -
