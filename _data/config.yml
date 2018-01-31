@@ -6,11 +6,15 @@ menu:
   -
     title: Portfolio
     url: /portfolio.html
+  -
+    title: Sketch
+    url: /sketch.html
+    menu: "posts"
 
 social:
   -
     name: linkedin
-    url: http://uk.linkedin.com/pub/pawe%C5%82-bogut/91/48a/b76
+    url: https://uk.linkedin.com/pub/pawel-bogut/91/48a/b76
     sign: "&#57417;"
   -
     name: github
@@ -18,5 +22,5 @@ social:
     sign: "&#57392;"
   -
     name: stackoverflow
-    url: http://stackoverflow.com/users/story/752006
+    url: https://stackoverflow.com/users/story/752006
     sign: "&#57351;"
