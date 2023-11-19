@@ -1,0 +1,55 @@
+[[skills]]
+name = "php"
+level = 95
+
+[[skills]]
+name = "elixir"
+level = 75
+
+[[skills]]
+name = "rust"
+level = 55
+
+[[skills]]
+name = "magento"
+level = 90
+
+[[skills]]
+name = "laravel"
+level = 85
+
+[[skills]]
+name = "phoenix"
+level = 65
+
+[[skills]]
+name = "html5"
+level = 75
+
+[[skills]]
+name = "css3"
+level = 75
+
+[[skills]]
+name = "javascript"
+level = 80
+
+[[skills]]
+name = "sql"
+level = 90
+
+[[skills]]
+name = "tailwind"
+level = 80
+
+[[skills]]
+name = "docker"
+level = 75
+
+[[skills]]
+name = "git"
+level = 85
+
+[[skills]]
+name = "linux"
+level = 95

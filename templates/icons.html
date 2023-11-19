@@ -1,0 +1,29 @@
+{% macro svg(id="elixir", size="2em", outer_class="", label=true, label_pos="bottom", hover=false) %}
+    {% set data = load_data(path="content/icons.toml") %}
+    {% set icon_class = "mx-auto" %}
+    {% if label_pos == "side" %}
+        {% set icon_class = icon_class ~ " inline" %}
+    {% endif %}
+    {% if hover == true %}
+        {% set icon_class = icon_class ~ " duration-200 ease-in-out sm:hover:-mb-[2.4em] sm:hover:w-[2.4em] sm:hover:h-[2.4em]" %}
+    {% endif %}
+    <div class="{{ outer_class }}">
+    {{ data[id].svg
+       | replace(from="<svg ", to='<svg width="__width__" height="__height__" class="__class__" ')
+       | replace(from="__height__", to=size)
+       | replace(from="__width__", to=size)
+       | replace(from="__class__", to=icon_class)
+       | safe
+    }}
+    {% if label == true %}
+        <span class="text-sm">
+            {{ data[id].label }}
+        </span>
+    {% endif %}
+    {% if label and label != true %}
+        <span class="text-sm">
+            {{ label }}
+        </span>
+    {% endif %}
+    </div>
+{% endmacro icon %}

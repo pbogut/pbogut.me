@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% import "icons.html" as icons %}
+
+{% macro card_top_class(class="", label=true) %}
+    {{ class }}
+    mx-auto
+    mt-10
+    block
+    w-4/5
+    max-w-3xl
+    rounded-t-xl
+    text-center
+    text-xl
+    text-slate-300
+{% endmacro card_top_class %}
+
+{% macro card_bot_class(class="", label=true) %}
+    {{ class }}
+    mx-auto
+    mb-10
+    block
+    w-4/5
+    max-w-3xl
+    rounded-b-xl
+    text-center
+    text-xl
+    text-slate-300
+{% endmacro card_bot_class %}
+
+{% block content %}
+    <div class="mx-auto w-4/5 max-w-3xl text-center">
+        <h1 class="
+            mt-10
+            inline-block
+            h-20
+            bg-gradient-to-r
+            from-rose-500
+            to-indigo-700
+            bg-clip-text
+            text-5xl
+            font-bold
+            text-transparent
+            sm:text-6xl
+            ">Paweł Bogut</h1>
+    </div>
+    <div class="p-6 {{ self::card_top_class(class="bg-sky-600") }}">
+        <div class="float-left mr-2 w-24 duration-200 ease-in-out hover:w-28">
+            <img class="rounded-full border-4 border-sky-800" src="/images/me-myself-and-i.jpg" />
+        </div>
+        I am a software developer with commercial experience in PHP, Magento and Laravel. However, for my side projects, I enjoy exploring other technologies such as Elixir and Rust.
+        <div class="clear-both"></div>
+    </div>
+    <div class="p-6 {{ self::card_bot_class(class="bg-sky-800") }}">
+        <a target="_blank" href="https://github.com/pbogut" class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+            {{ icons::svg(id="github", hover=true, label=false) }}
+        </a>
+        <a target="_blank" href="https://gitlab.com/pbogut" class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+            {{ icons::svg(id="gitlab", hover=true, label=false) }}
+        </a>
+        <a target="_blank" href="https://x.com/_pbogut" class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+            {{ icons::svg(id="x", hover=true, label=false) }}
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/pbogut/" class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+            {{ icons::svg(id="linkedin", hover=true, label=false) }}
+        </a>
+    </div>
+
+    <div class="p-6 {{ self::card_top_class(class="bg-violet-700") }}">
+        <span class="float-left">
+            {{ icons::svg(id="stars", size="1.5em", label=false) }}
+        </span>
+        <span class="pr-10">Skills</span>
+    </div>
+    <div class="px-2 py-6 {{ self::card_bot_class(class="bg-violet-900") }}">
+        {% set skills = load_data(path="content/skills.toml") %}
+
+        {% for skill in skills.skills %}
+            <div class="m-4 inline-block align-top text-slate-300">
+                {{ icons::svg(id=skill.name) }}
+                <div class="m-auto h-1.5 w-10 rounded-full bg-violet-500">
+                    <div class="h-1.5 rounded-full bg-violet-300" style="width: {{ skill.level }}%"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="p-6 {{ self::card_top_class(class="bg-indigo-500") }}">
+        <span class="float-left">
+            {{ icons::svg(id="work", size="1.5em", label=false) }}
+        </span>
+        <span class="pr-10">Work Experience</span>
+    </div>
+    <div class="{{ self::card_bot_class(class="bg-indigo-700") }}">
+        {% set work = load_data(path="content/work_experience.toml") %}
+        {% for company in work.companies %}
+            <div class="border-b-2 border-b-indigo-600 p-6 last:border-b-0">
+                <div class="text-left">
+                    <span class="float-right text-sm">{{ company.period }}</span>
+                </div>
+                <div class="mb-2 text-left text-lg">
+                    <strong>{{ company.name }}</strong>
+                    <span class="hidden sm:inline">-</span>
+                    <span class="block text-base italic sm:inline sm:text-lg">{{ company.position }}</span>
+                </div>
+                <div class="mb-4 text-left text-base">
+                    {{ company.description | safe }}
+                </div>
+                <div class="w-auto text-center">
+                    {% for skill in company.skills %}
+                    <div class="_first:ml-0 _last:mr-0 mx-2 my-0.5 inline-block">
+                    {{ icons::svg(id=skill, size="1em", label_pos="side") }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="clear-both"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="p-6 {{ self::card_top_class(class="bg-cyan-700") }}">
+        <span class="float-left">
+            {{ icons::svg(id="folder", size="1.5em", label=false) }}
+        </span>
+        <span class="pr-10">Projects</span>
+    </div>
+    <div class="{{ self::card_bot_class(class="bg-cyan-900") }}">
+        {% set projects = load_data(path="content/projects.toml") %}
+        {% for project in projects.projects %}
+            <div class="border-b-2 border-b-cyan-800 p-6 last:border-b-0">
+                <div class="mb-2 text-left text-lg">
+                    <a href="{{ project.url }}" class="mb-2 text-lg text-slate-300" target="_blank">
+                        <strong>{{ project.name }}</strong>
+                        <span class="ml-1 inline-block">
+                            {{ icons::svg(id="outlink", size="0.8em", label=false) }}
+                        </span>
+                    </a>
+                </div>
+                <a href="{{ project.url }}" target="_blank">
+                    <div class="mx-auto mb-3 h-32 w-48 rounded-xl border-2 border-teal-700 bg-teal-950 bg-cover bg-center bg-no-repeat sm:float-right sm:-mt-8 sm:ml-3"
+                        style="background-image: url({{ project.image }});">
+                    </div>
+                </a>
+                <div class="mb-4 text-left text-base">
+                    {{ project.description | safe}}
+                </div>
+                <div class="w-auto text-center">
+                    {% for skill in project.skills %}
+                    <div class="_first:ml-0 _last:mr-0 mx-2 my-0.5 inline-block">
+                    {{ icons::svg(id=skill, size="1em", label_pos="side") }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="clear-both"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

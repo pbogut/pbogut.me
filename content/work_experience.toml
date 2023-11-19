@@ -1,0 +1,45 @@
+[[companies]]
+name = "Assured Pharmacy"
+position = "Lead Developer"
+period = "2018 - Present"
+description = """
+I managed and improved a comprehensive pharmacy management system, ensuring
+smooth operations and patient management. Additionally, I migrated the Magento 1
+storefront to Magento 2 and continue to work on Magento improvements.
+"""
+skills = ["php", "magento2", "laravel", "tailwind", "docker", "mariadb"]
+
+
+[[companies]]
+name = "UK POS"
+position = "Senior Developer"
+period = "2016 - 2018"
+description = """
+I have developed a Data Warehouse application that combines data from different
+sources (applications) and utilizes data analysis techniques to extract valuable
+insights and generate comprehensive reports. I have also assisted in improving
+the Magento store.
+"""
+skills = ["php", "magento", "laravel", "docker", "mysql"]
+
+[[companies]]
+name = "Monocore"
+position = "Senior Developer"
+period = "2014 - 2016"
+description = """
+I maintained two Magento shops, with a focus on creating new modules to enhance
+functionality. In addition, I designed and implemented internal applications
+for reporting, streamlining processes, and enhancing efficiency.
+"""
+skills = ["php", "magento", "javascript", "mysql"]
+
+[[companies]]
+name = "Web-Soft.com.pl"
+position = "Junior / Mid Developer"
+period = "2012 - 2014"
+description = """
+Initially, I was responsible for maintaining current projects and adding new
+functionalities. Later, I focused on creating new projects and Magento
+modules.
+"""
+skills = ["php", "magento", "javascript", "zendframework", "extjs", "mysql"]

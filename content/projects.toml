@@ -1,0 +1,31 @@
+[[projects]]
+name = "KidzPlayClub"
+url = "https://kidzplay.club"
+image = "https://kidzplay.club/images/header-409abc5ae080217e826c37f48c46f7d4.svg?vsn=d"
+description = """
+Site with mini games for kids. Powered by Phoenix LiveView.
+"""
+skills = ["elixir", "phoenix", "tailwind"]
+
+
+[[projects]]
+name = "Magento 2 Language Server"
+url = "https://marketplace.visualstudio.com/items?itemName=pbogut.magento2-ls"
+image = "https://github.com/pbogut/magento2-ls/blob/master/vscode/logo.png?raw=true"
+description = """
+Language Server for Magento 2 projects provides easier navigation between
+XML, PHP, and JS files. It also adds completion for Magento 2 items.
+"""
+skills = ["rust"]
+
+[[projects]]
+name = "DocRepo"
+url = "https://docdemo.axol.it"
+image = "https://storage.pbogut.me/img/3ff9017b95f1303ec99e09391a924ef1481129e5.png"
+
+description = """
+Repository for documents related to tender/offers (written references, contracts
+, customers and contractors). Written in Laravel with touch of Vue.js.
+<br><small>(user: demo pass: demo)</small>
+"""
+skills = ["php", "laravel", "javascript", "vuejs", "postgresql"]
