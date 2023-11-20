@@ -1,5 +1,6 @@
 [[companies]]
 name = "Assured Pharmacy"
+image = "/images/work/assuredpharmacy.png"
 position = "Lead Developer"
 period = "2018 - Present"
 description = """
@@ -12,6 +13,7 @@ skills = ["php", "magento2", "laravel", "tailwind", "docker", "mariadb"]
 
 [[companies]]
 name = "UK POS"
+image = "/images/work/ukpos.png"
 position = "Senior Developer"
 period = "2016 - 2018"
 description = """
@@ -24,6 +26,7 @@ skills = ["php", "magento", "laravel", "docker", "mysql"]
 
 [[companies]]
 name = "Monocore"
+image = "/images/work/monocore.png"
 position = "Senior Developer"
 period = "2014 - 2016"
 description = """
@@ -35,6 +38,7 @@ skills = ["php", "magento", "javascript", "mysql"]
 
 [[companies]]
 name = "Web-Soft.com.pl"
+image = "/images/work/websoft.png"
 position = "Junior / Mid Developer"
 period = "2012 - 2014"
 description = """

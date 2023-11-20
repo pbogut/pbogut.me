@@ -94,8 +94,11 @@
         {% set work = load_data(path="content/work_experience.toml") %}
         {% for company in work.companies %}
             <div class="border-b-2 border-b-indigo-600 p-6 last:border-b-0">
-                <div class="text-left">
-                    <span class="float-right text-sm">{{ company.period }}</span>
+                <div class="float-right text-right">
+                    <div class="text-sm">{{ company.period }}</div>
+                    <div class="ml-3 mt-2 inline-block w-14 overflow-hidden rounded-md border-2 border-indigo-600 sm:mt-5">
+                        <img src="{{ company.image }}" alt="{{ company.name }} logo" />
+                    </div>
                 </div>
                 <div class="mb-2 text-left text-lg">
                     <strong>{{ company.name }}</strong>
@@ -146,7 +149,7 @@
                 <div class="w-auto text-center">
                     {% for skill in project.skills %}
                     <div class="_first:ml-0 _last:mr-0 mx-2 my-0.5 inline-block">
-                    {{ icons::svg(id=skill, size="1em", label_pos="side") }}
+                        {{ icons::svg(id=skill, size="1em", label_pos="side") }}
                     </div>
                     {% endfor %}
                 </div>
