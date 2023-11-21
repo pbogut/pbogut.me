@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Paweł Bogut - Sowftware Developer</title>
-        <link rel="stylesheet" href="/css/site.css" type="text/css">
+        <link rel="stylesheet" href="{{ get_url(path="css/site.css") }}" type="text/css">
+
         <meta property="og:title" content="Paweł Bogut" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://pbogut.me" />
-        <meta property="og:image" content="https://pbogut.me/images/banner.jpg" />
+        <meta property="og:url" content="{{ config.base_url | safe }}" />
+        <meta property="og:image" content="{{ get_url(path="/images/banner.jpg") }}" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:description" content="I am a software developer with commercial experience in PHP, Magento and Laravel. However, for my side projects, I enjoy exploring other technologies such as Elixir and Rust." />
     </head>

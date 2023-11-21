@@ -2,12 +2,10 @@
 {% import "icons.html" as icons %}
 
 {% block content %}
-<div class="mx-auto
-    mt-10
+<div class="
     block
     w-[600px]
     max-w-[600px]
-    rounded-t-xl
     bg-sky-600
     p-6
     text-center
@@ -16,10 +14,11 @@
     background: black;
 ">
     <div class="float-left mr-2 w-24 duration-200 ease-in-out hover:w-28">
-        <img class="rounded-full border-4 border-sky-800" src="/images/me-myself-and-i.jpg">
+        <img class="rounded-full border-4 border-sky-800" src="{{ get_url(path="/images/me-myself-and-i.jpg") }}">
     </div>
     <h1 class="
-        mt-4
+        -mb-2
+        mt-6
         inline-block
         h-20
         bg-gradient-to-r
@@ -33,12 +32,10 @@
         ">Paweł&nbsp;Bogut</h1>
     <div class="clear-both"></div>
 </div>
-<div class="mx-auto
-    mb-10
+<div class="
     block
     w-[600px]
     max-w-[600px]
-    rounded-b-xl
     bg-violet-950
     p-6
     text-center
