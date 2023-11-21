@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% import "icons.html" as icons %}
+
+{% block content %}
+<div class="mx-auto
+    mt-10
+    block
+    w-[600px]
+    max-w-[600px]
+    rounded-t-xl
+    bg-sky-600
+    p-6
+    text-center
+    text-xl
+    text-slate-300" style="
+    background: black;
+">
+    <div class="float-left mr-2 w-24 duration-200 ease-in-out hover:w-28">
+        <img class="rounded-full border-4 border-sky-800" src="/images/me-myself-and-i.jpg">
+    </div>
+    <h1 class="
+        mt-4
+        inline-block
+        h-20
+        bg-gradient-to-r
+        from-rose-500
+        to-indigo-700
+        bg-clip-text
+        text-5xl
+        font-bold
+        text-transparent
+        sm:text-6xl
+        ">Paweł&nbsp;Bogut</h1>
+    <div class="clear-both"></div>
+</div>
+<div class="mx-auto
+    mb-10
+    block
+    w-[600px]
+    max-w-[600px]
+    rounded-b-xl
+    bg-violet-950
+    p-6
+    text-center
+    text-xl
+    text-slate-300">
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="elixir", label=true, size="3em") }}
+    </div>
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="rust", label=true, size="3em") }}
+    </div>
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="php", label=true, size="3em") }}
+    </div>
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="javascript", label=true, size="3em") }}
+    </div>
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="phoenix", label=true, size="3em") }}
+    </div>
+    <div class="mx-2 inline-block align-top text-slate-300 sm:mx-3">
+        {{ icons::svg(id="magento", label="Magento2", size="3em") }}
+    </div>
+</div>
+{% endblock content %}
