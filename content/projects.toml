@@ -1,4 +1,13 @@
 [[projects]]
+name = "BrixBlox"
+url = "https://play.google.com/store/apps/details?id=net.axolit.brixblox"
+image = "https://play-lh.googleusercontent.com/cc3BWOc-PpqZMqJ23Wa3Nftu3ic1HERIbCBrf_60s3y8anPpTu8k3punaC0CHINCxO0=w416-h235-rw"
+description = """
+Block tetris like puzzle game for Android phones.
+"""
+skills = ["godot", "android"]
+
+[[projects]]
 name = "KidzPlayClub"
 url = "https://kidzplay.club"
 image = "https://kidzplay.club/images/header-409abc5ae080217e826c37f48c46f7d4.svg?vsn=d"
@@ -6,7 +15,6 @@ description = """
 Site with mini games for kids. Powered by Phoenix LiveView.
 """
 skills = ["elixir", "phoenix", "tailwind"]
-
 
 [[projects]]
 name = "Magento 2 Language Server"
