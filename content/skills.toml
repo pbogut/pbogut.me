@@ -11,6 +11,10 @@ name = "rust"
 level = 55
 
 [[skills]]
+name = "go"
+level = 35
+
+[[skills]]
 name = "magento"
 level = 90
 
