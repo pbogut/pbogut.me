@@ -1,4 +1,16 @@
 [[companies]]
+name = "Axolit"
+image = "/images/work/axolit.png"
+position = "Founder / Developer"
+period = "2018 - Present"
+description = """
+With a focus on web development and expertise in PHP, Magento, JavaScript,
+and Elixir. I provide customized solutions to meet the specific requirements of
+my clients.
+"""
+skills = ["php", "javascript", "elixir", "rust", "magento"]
+
+[[companies]]
 name = "Assured Pharmacy"
 image = "/images/work/assuredpharmacy.png"
 position = "Lead Developer"
