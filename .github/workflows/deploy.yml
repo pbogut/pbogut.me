@@ -1,0 +1,61 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: ["master"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Tailwind build
+        run: |
+          npm install
+          make build_tailwind
+
+      - name: Zola build
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          BUILD_ONLY: true
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.PA_TOKEN }}
+
+      - name: Docker build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/pbogut/pbogut.me:latest
+
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Deploy
+        shell: bash
+        run: |
+          curl --request GET \
+            --url '${{ secrets.COOLIFY_DEPLOY_HOOK }}' \
+            --header 'Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}'
