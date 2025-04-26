@@ -13,10 +13,20 @@ build_zola:
 
 build: build_tailwind .WAIT build_zola
 
+build_docker:
+	@docker build -t ghcr.io/pbogut/pbogut.me:latest .
+
+push_docker:
+	@docker push ghcr.io/pbogut/pbogut.me:latest
+
 tailwind_watch:
 	@npx tailwind --watch --input=./templates/site.css --output=./static/css/site.css
 
 zola_serve:
 	@zola serve
+
+deploy: build .WAIT build_docker
+	@docker push ghcr.io/pbogut/pbogut.me:latest && \
+	coolify-deploy pbogut_me_prod
 
 dev: tailwind_watch zola_serve
